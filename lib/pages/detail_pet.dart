@@ -117,58 +117,64 @@ class _DetailPetState extends State<DetailPet> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Column(
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    widget.pet.name,
-                                    style: bodyTextStyle.copyWith(
-                                      fontSize: 24,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                  ),
-                                  Row(
-                                    children: [
-                                      Icon(
-                                        Icons.place,
-                                        size: 18,
-                                        color: accentTextColor,
+                              Expanded(
+                                flex: 5,
+                                child: Column(
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Text(
+                                      widget.pet.name,
+                                      style: bodyTextStyle.copyWith(
+                                        fontSize: 24,
+                                        fontWeight: FontWeight.bold,
                                       ),
-                                      Text(
-                                        widget.pet.location,
-                                        style: bodyTextStyle.copyWith(
-                                          fontSize: 14,
+                                    ),
+                                    Row(
+                                      children: [
+                                        Icon(
+                                          Icons.place,
+                                          size: 18,
                                           color: accentTextColor,
                                         ),
-                                      ),
-                                    ],
-                                  ),
-                                ],
-                              ),
-                              Container(
-                                padding: EdgeInsets.all(10),
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 20,
-                                      color: Colors.black.withOpacity(.1),
+                                        Text(
+                                          widget.pet.location,
+                                          style: bodyTextStyle.copyWith(
+                                            fontSize: 14,
+                                            color: accentTextColor,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ],
-                                  color: Colors.white,
-                                  borderRadius: BorderRadius.circular(50),
                                 ),
-                                child: IconButton(
-                                  onPressed: () {
-                                    setState(() {
-                                      widget.pet.isFavorite =
-                                          !widget.pet.isFavorite;
-                                    });
-                                  },
-                                  icon: Icon(
-                                    widget.pet.isFavorite
-                                        ? Icons.favorite
-                                        : Icons.favorite_border,
-                                    color: Colors.pink,
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 20,
+                                        color: Colors.black.withOpacity(.1),
+                                      ),
+                                    ],
+                                    color: Colors.white,
+                                    borderRadius: BorderRadius.circular(50),
+                                  ),
+                                  child: IconButton(
+                                    onPressed: () {
+                                      setState(() {
+                                        widget.pet.isFavorite =
+                                            !widget.pet.isFavorite;
+                                      });
+                                    },
+                                    icon: Icon(
+                                      widget.pet.isFavorite
+                                          ? Icons.favorite
+                                          : Icons.favorite_border,
+                                      color: Colors.pink,
+                                    ),
                                   ),
                                 ),
                               ),
@@ -180,85 +186,99 @@ class _DetailPetState extends State<DetailPet> {
                           Row(
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                width: MediaQuery.of(context).size.width / 4,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: accentTextColor, width: 1),
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      'Gender',
-                                      style: bodyTextStyle.copyWith(
-                                        color: accentTextColor,
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                  width: MediaQuery.of(context).size.width / 4,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: accentTextColor, width: 1),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        'Gender',
+                                        style: bodyTextStyle.copyWith(
+                                          color: accentTextColor,
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      widget.pet.gender,
-                                      style: bodyTextStyle.copyWith(
-                                        fontSize: 16,
+                                      Text(
+                                        widget.pet.gender,
+                                        style: bodyTextStyle.copyWith(
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                width: MediaQuery.of(context).size.width / 4,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: accentTextColor, width: 1),
-                                  borderRadius: BorderRadius.circular(15),
-                                ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      'Age',
-                                      style: bodyTextStyle.copyWith(
-                                        color: accentTextColor,
-                                      ),
-                                    ),
-                                    Text(
-                                      '${widget.pet.age.toString()} Month',
-                                      style: bodyTextStyle.copyWith(
-                                        fontSize: 16,
-                                      ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
-                                width: MediaQuery.of(context).size.width / 4,
-                                decoration: BoxDecoration(
-                                  border: Border.all(
-                                      color: accentTextColor, width: 1),
-                                  borderRadius: BorderRadius.circular(15),
+                              SizedBox(width: 10),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                  width: MediaQuery.of(context).size.width / 4,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: accentTextColor, width: 1),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        'Age',
+                                        style: bodyTextStyle.copyWith(
+                                          color: accentTextColor,
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                      Text(
+                                        '${widget.pet.age.toString()} Month',
+                                        style: bodyTextStyle.copyWith(
+                                          fontSize: 14,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                child: Column(
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceAround,
-                                  children: [
-                                    Text(
-                                      'Race',
-                                      style: bodyTextStyle.copyWith(
-                                        color: accentTextColor,
+                              ),
+                              SizedBox(width: 10),
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  padding: EdgeInsets.fromLTRB(10, 10, 10, 10),
+                                  width: MediaQuery.of(context).size.width / 4,
+                                  decoration: BoxDecoration(
+                                    border: Border.all(
+                                        color: accentTextColor, width: 1),
+                                    borderRadius: BorderRadius.circular(15),
+                                  ),
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceAround,
+                                    children: [
+                                      Text(
+                                        'Race',
+                                        style: bodyTextStyle.copyWith(
+                                          color: accentTextColor,
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                    Text(
-                                      widget.pet.race,
-                                      style: bodyTextStyle.copyWith(
-                                        fontSize: 16,
+                                      Text(
+                                        widget.pet.race,
+                                        style: bodyTextStyle.copyWith(
+                                          fontSize: 14,
+                                        ),
                                       ),
-                                    ),
-                                  ],
+                                    ],
+                                  ),
                                 ),
                               ),
                             ],
@@ -299,62 +319,56 @@ class _DetailPetState extends State<DetailPet> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    children: [
-                      Container(
-                        width: 50,
-                        child: ClipRRect(
-                          borderRadius: BorderRadius.circular(50),
-                          child: Image.asset(widget.pet.imageOwner),
-                        ),
-                      ),
-                      SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Owner',
-                            style: bodyTextStyle.copyWith(
-                              fontSize: 14,
-                              color: accentTextColor,
-                            ),
-                          ),
-                          Text(
-                            widget.pet.nameOwner,
-                            style: bodyTextStyle.copyWith(
-                              fontSize: 16,
-                              color: primaryColor,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
-                  Container(
-                    padding: EdgeInsets.fromLTRB(25, 12, 25, 12),
-                    width: MediaQuery.of(context).size.width / 3,
-                    decoration: BoxDecoration(
-                      color: primaryColor,
-                      borderRadius: BorderRadius.circular(40),
-                    ),
+                  Expanded(
+                    flex: 4,
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Icon(
-                          Icons.sms,
-                          color: Colors.white,
-                        ),
-                        Text(
-                          'Contact',
-                          style: bodyTextStyle.copyWith(
-                            fontSize: 14,
-                            color: Colors.white,
+                        Container(
+                          width: 50,
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(50),
+                            child: Image.asset(widget.pet.imageOwner),
                           ),
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              'Owner',
+                              style: bodyTextStyle.copyWith(
+                                fontSize: 14,
+                                color: accentTextColor,
+                              ),
+                            ),
+                            Text(
+                              widget.pet.nameOwner,
+                              style: bodyTextStyle.copyWith(
+                                fontSize: 16,
+                                color: primaryColor,
+                              ),
+                            ),
+                          ],
                         ),
                       ],
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Container(
+                      padding: EdgeInsets.fromLTRB(25, 12, 25, 12),
+                      width: MediaQuery.of(context).size.width / 4,
+                      decoration: BoxDecoration(
+                        color: primaryColor,
+                        borderRadius: BorderRadius.circular(40),
+                      ),
+                      child: Icon(
+                        Icons.sms,
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ],
