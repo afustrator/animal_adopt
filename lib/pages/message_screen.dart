@@ -205,7 +205,7 @@ class MessageScreen extends StatelessWidget {
                                       child: ClipRRect(
                                         borderRadius: BorderRadius.circular(50),
                                         child: Image.asset(
-                                          message.imageAvatar,
+                                          message.ownerAvatar,
                                         ),
                                       ),
                                     ),
@@ -229,7 +229,7 @@ class MessageScreen extends StatelessWidget {
                                           ),
                                         ),
                                         Text(
-                                          message.textChat,
+                                          message.ownerChat[0],
                                           style: bodyTextStyle.copyWith(
                                             fontSize: 12,
                                             color: accentTextColor,

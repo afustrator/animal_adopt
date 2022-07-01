@@ -1,46 +1,64 @@
 class Message {
-  String imageAvatar;
+  String ownerAvatar;
+  String myAvatar;
   String name;
-  String textChat;
+  List ownerChat;
+  List myChat;
   int time;
 
   Message({
-    required this.imageAvatar,
+    required this.ownerAvatar,
+    required this.myAvatar,
     required this.name,
-    required this.textChat,
+    required this.ownerChat,
+    required this.myChat,
     required this.time,
   });
 }
 
 var messageList = [
   Message(
-    imageAvatar: 'assets/images/avatar1.png',
+    ownerAvatar: 'assets/images/avatar1.png',
+    myAvatar: '',
     name: 'David Anderson',
-    textChat: 'Me : Ok no problem, thank for...',
+    ownerChat: [
+      'David: Sorry, your location is very far from my place.',
+    ],
+    myChat: [
+      'Me: Ok no problem, thank you for the reply.',
+    ],
     time: 4,
   ),
   Message(
-    imageAvatar: 'assets/images/avatar2.png',
+    ownerAvatar: 'assets/images/avatar2.png',
+    myAvatar: '',
     name: 'Jack Lobanov',
-    textChat: 'Jack Lobanov : Yes but you...',
+    ownerChat: ['Jack: Yes but you...'],
+    myChat: [],
     time: 8,
   ),
   Message(
-    imageAvatar: 'assets/images/avatar3.png',
+    ownerAvatar: 'assets/images/avatar3.png',
+    myAvatar: '',
     name: 'Arianne Madilva',
-    textChat: 'Me : His looks cute can I adopt...',
+    ownerChat: ['Madilva: His looks cute can I adopt...'],
+    myChat: [],
     time: 12,
   ),
   Message(
-    imageAvatar: 'assets/images/avatar4.png',
+    ownerAvatar: 'assets/images/avatar4.png',
+    myAvatar: '',
     name: 'Yarui Mikasa',
-    textChat: 'Me : His looks cute can...',
+    ownerChat: ['Yarui: His looks cute can...'],
+    myChat: [],
     time: 12,
   ),
   Message(
-    imageAvatar: 'assets/images/avatar5.png',
+    ownerAvatar: 'assets/images/avatar5.png',
+    myAvatar: '',
     name: 'Robert Beyone',
-    textChat: 'Me : His looks pretty I love it...',
+    ownerChat: ['Robert: His looks pretty I love it...'],
+    myChat: [],
     time: 2,
   ),
 ];

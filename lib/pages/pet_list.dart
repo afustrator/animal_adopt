@@ -206,7 +206,7 @@ class PetList extends StatelessWidget {
                               Positioned(
                                 bottom: 0,
                                 child: Container(
-                                  padding: EdgeInsets.fromLTRB(30, 14, 30, 14),
+                                  padding: EdgeInsets.fromLTRB(20, 14, 20, 14),
                                   width: MediaQuery.of(context).size.width - 48,
                                   decoration: BoxDecoration(
                                     color: Colors.white,
@@ -217,90 +217,98 @@ class PetList extends StatelessWidget {
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
+                                    mainAxisSize: MainAxisSize.min,
                                     children: [
-                                      Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            pet.name,
-                                            style: bodyTextStyle.copyWith(
-                                              fontSize: 16,
-                                              fontWeight: FontWeight.bold,
+                                      Expanded(
+                                        flex: 5,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              pet.name,
+                                              style: bodyTextStyle.copyWith(
+                                                fontSize: 16,
+                                                fontWeight: FontWeight.bold,
+                                              ),
                                             ),
-                                          ),
-                                          SizedBox(
-                                            height: 5,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Icon(
-                                                Icons.place,
-                                                color: accentTextColor,
-                                              ),
-                                              SizedBox(
-                                                width: 2,
-                                              ),
-                                              Text(
-                                                pet.location,
-                                                style: bodyTextStyle.copyWith(
-                                                  fontSize: 12,
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Icon(
+                                                  Icons.place,
                                                   color: accentTextColor,
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                          SizedBox(
-                                            height: 10,
-                                          ),
-                                          Row(
-                                            children: [
-                                              Container(
-                                                padding: EdgeInsets.fromLTRB(
-                                                    10, 3, 10, 3),
-                                                decoration: BoxDecoration(
-                                                  color: accentTextColor
-                                                      .withOpacity(0.3),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
+                                                SizedBox(
+                                                  width: 2,
                                                 ),
-                                                child: Text(
-                                                  pet.gender,
-                                                  style: bodyTextStyle,
+                                                Text(
+                                                  pet.location,
+                                                  style: bodyTextStyle.copyWith(
+                                                    fontSize: 10,
+                                                    color: accentTextColor,
+                                                  ),
                                                 ),
-                                              ),
-                                              SizedBox(
-                                                width: 5,
-                                              ),
-                                              Container(
-                                                padding: EdgeInsets.fromLTRB(
-                                                    10, 3, 10, 3),
-                                                decoration: BoxDecoration(
-                                                  color: accentTextColor
-                                                      .withOpacity(0.3),
-                                                  borderRadius:
-                                                      BorderRadius.circular(5),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 10,
+                                            ),
+                                            Row(
+                                              children: [
+                                                Container(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                      10, 3, 10, 3),
+                                                  decoration: BoxDecoration(
+                                                    color: accentTextColor
+                                                        .withOpacity(0.3),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                  ),
+                                                  child: Text(
+                                                    pet.gender,
+                                                    style: bodyTextStyle,
+                                                  ),
                                                 ),
-                                                child: Text(
-                                                  '${pet.age} Months',
-                                                  style: bodyTextStyle,
+                                                SizedBox(
+                                                  width: 5,
                                                 ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: primaryColor,
-                                          borderRadius:
-                                              BorderRadius.circular(50),
+                                                Container(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                      10, 3, 10, 3),
+                                                  decoration: BoxDecoration(
+                                                    color: accentTextColor
+                                                        .withOpacity(0.3),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            5),
+                                                  ),
+                                                  child: Text(
+                                                    '${pet.age} Months',
+                                                    style: bodyTextStyle,
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ],
                                         ),
-                                        child: IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.sms,
-                                            color: Colors.white,
+                                      ),
+                                      Expanded(
+                                        child: Container(
+                                          decoration: BoxDecoration(
+                                            color: primaryColor,
+                                            borderRadius:
+                                                BorderRadius.circular(50),
+                                          ),
+                                          child: IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.sms,
+                                              color: Colors.white,
+                                            ),
                                           ),
                                         ),
                                       ),

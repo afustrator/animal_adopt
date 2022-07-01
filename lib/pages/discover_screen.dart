@@ -169,7 +169,7 @@ class DiscoverScreen extends StatelessWidget {
                   height: 20,
                 ),
                 Container(
-                  height: 225,
+                  height: 200,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemBuilder: ((context, index) {
@@ -187,7 +187,7 @@ class DiscoverScreen extends StatelessWidget {
                             left: 10,
                           ),
                           width: MediaQuery.of(context).size.width / 3,
-                          height: MediaQuery.of(context).size.height / 5,
+                          // height: MediaQuery.of(context).size.height,
                           decoration: BoxDecoration(
                             color: Colors.white,
                             boxShadow: [
@@ -201,103 +201,117 @@ class DiscoverScreen extends StatelessWidget {
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Container(
-                                width: MediaQuery.of(context).size.width / 3,
-                                decoration: BoxDecoration(
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 20,
-                                      color: Colors.black.withOpacity(.05),
-                                    ),
-                                  ],
-                                ),
-                                child: Stack(
-                                  children: [
-                                    ClipRRect(
-                                      borderRadius: BorderRadius.circular(20),
-                                      child: Container(
-                                        width:
-                                            MediaQuery.of(context).size.width /
-                                                3,
-                                        height:
-                                            MediaQuery.of(context).size.height /
-                                                6,
-                                        child: Hero(
-                                          tag: 'imageHero$index',
-                                          child: Image.asset(
-                                            pet.imageAsset,
-                                            fit: BoxFit.cover,
+                              Expanded(
+                                flex: 1,
+                                child: Container(
+                                  width: MediaQuery.of(context).size.width / 3,
+                                  decoration: BoxDecoration(
+                                    boxShadow: [
+                                      BoxShadow(
+                                        blurRadius: 20,
+                                        color: Colors.black.withOpacity(.05),
+                                      ),
+                                    ],
+                                  ),
+                                  child: Stack(
+                                    children: [
+                                      ClipRRect(
+                                        borderRadius: BorderRadius.circular(20),
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width /
+                                              3,
+                                          height: MediaQuery.of(context)
+                                                  .size
+                                                  .height /
+                                              6,
+                                          child: Hero(
+                                            tag: 'imageHero$index',
+                                            child: Image.asset(
+                                              pet.imageAsset,
+                                              fit: BoxFit.cover,
+                                            ),
                                           ),
+                                        ),
+                                      ),
+                                      Container(
+                                        padding:
+                                            EdgeInsets.fromLTRB(14, 4, 14, 4),
+                                        decoration: BoxDecoration(
+                                          color: secondaryColor,
+                                          borderRadius: BorderRadius.only(
+                                            topLeft: Radius.circular(20),
+                                            topRight: Radius.circular(15),
+                                            bottomRight: Radius.circular(15),
+                                          ),
+                                        ),
+                                        child: Text(
+                                          pet.gender,
+                                          style: bodyTextStyle.copyWith(
+                                            color: Colors.white,
+                                          ),
+                                        ),
+                                      ),
+                                      Positioned(
+                                        bottom: 10,
+                                        right: 10,
+                                        child: Container(
+                                          width: 40,
+                                          height: 40,
+                                          decoration: BoxDecoration(
+                                            color: Colors.white,
+                                            borderRadius:
+                                                BorderRadius.circular(40),
+                                          ),
+                                          child: IconButton(
+                                            onPressed: () {},
+                                            icon: Icon(
+                                              Icons.message,
+                                              color: secondaryColor,
+                                              size: 18.0,
+                                            ),
+                                          ),
+                                        ),
+                                      )
+                                    ],
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                flex: 1,
+                                child: Column(
+                                  children: [
+                                    Container(
+                                      margin: EdgeInsets.fromLTRB(14, 10, 0, 0),
+                                      child: Text(
+                                        pet.name,
+                                        style: bodyTextStyle.copyWith(
+                                          fontSize: 14,
+                                          fontWeight: FontWeight.w600,
                                         ),
                                       ),
                                     ),
                                     Container(
                                       padding:
-                                          EdgeInsets.fromLTRB(14, 4, 14, 4),
+                                          EdgeInsets.fromLTRB(10, 3, 10, 3),
+                                      margin: EdgeInsets.fromLTRB(14, 8, 0, 0),
                                       decoration: BoxDecoration(
-                                        color: secondaryColor,
-                                        borderRadius: BorderRadius.only(
-                                          topLeft: Radius.circular(20),
-                                          topRight: Radius.circular(15),
-                                          bottomRight: Radius.circular(15),
-                                        ),
+                                        color: accentTextColor.withOpacity(0.2),
+                                        borderRadius: BorderRadius.circular(5),
                                       ),
                                       child: Text(
-                                        pet.gender,
+                                        '${pet.age} Months',
                                         style: bodyTextStyle.copyWith(
-                                          color: Colors.white,
+                                          color: primaryColor,
+                                          fontSize: 12,
                                         ),
                                       ),
                                     ),
-                                    Positioned(
-                                      bottom: 10,
-                                      right: 10,
-                                      child: Container(
-                                        width: 40,
-                                        height: 40,
-                                        decoration: BoxDecoration(
-                                          color: Colors.white,
-                                          borderRadius:
-                                              BorderRadius.circular(40),
-                                        ),
-                                        child: IconButton(
-                                          onPressed: () {},
-                                          icon: Icon(
-                                            Icons.message,
-                                            color: secondaryColor,
-                                            size: 18.0,
-                                          ),
-                                        ),
-                                      ),
-                                    )
                                   ],
                                 ),
                               ),
-                              Container(
-                                margin: EdgeInsets.fromLTRB(14, 10, 0, 0),
-                                child: Text(
-                                  pet.name,
-                                  style: bodyTextStyle.copyWith(
-                                    fontSize: 14,
-                                    fontWeight: FontWeight.w600,
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                padding: EdgeInsets.fromLTRB(10, 3, 10, 3),
-                                margin: EdgeInsets.fromLTRB(14, 8, 0, 0),
-                                decoration: BoxDecoration(
-                                  color: accentTextColor.withOpacity(0.2),
-                                  borderRadius: BorderRadius.circular(5),
-                                ),
-                                child: Text(
-                                  '${pet.age} Months',
-                                  style: bodyTextStyle.copyWith(
-                                    color: primaryColor,
-                                    fontSize: 12,
-                                  ),
-                                ),
-                              ),
+                              // SizedBox(height: 20,),
                             ],
                           ),
                         ),
