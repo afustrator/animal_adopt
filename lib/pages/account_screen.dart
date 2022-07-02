@@ -152,7 +152,7 @@ class AccountScreen extends StatelessWidget {
                 padding: const EdgeInsets.fromLTRB(24, 0, 24, 0),
                 child: Container(
                   width: MediaQuery.of(context).size.width,
-                  padding: EdgeInsets.fromLTRB(20, 20, 20, 20),
+                  padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     boxShadow: [

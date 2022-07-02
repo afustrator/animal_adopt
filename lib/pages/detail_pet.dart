@@ -118,7 +118,7 @@ class _DetailPetState extends State<DetailPet> {
                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                             children: [
                               Expanded(
-                                flex: 5,
+                                flex: 4,
                                 child: Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
@@ -149,7 +149,7 @@ class _DetailPetState extends State<DetailPet> {
                                 ),
                               ),
                               Expanded(
-                                flex: 1,
+                                flex: 2,
                                 child: Container(
                                   padding: EdgeInsets.all(10),
                                   decoration: BoxDecoration(
