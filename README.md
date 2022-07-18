@@ -1,16 +1,3 @@
 # animal_adopt
 
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Hello everyone, this is my submission project in flutter beginner class on Dicoding learning platform. This app is about how a person wants to adopt a cat, but he doesn't know if someone around him or even in a different place opens his pet adoption. So with this application, they can meet each other in this application and even know the location of the person who opened the adoption.
